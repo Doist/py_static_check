@@ -8,7 +8,7 @@ setup(
     author="amix",
     author_email="amix@amix.dk",
     url="http://www.amix.dk/",
-    packages=["py_static_check", "py_static_check.pyflakes"],
+    packages=["py_static_check"],
     install_requires = ['pyflakes>=0.5'],
     scripts=["bin/py_static_check"],
     classifiers=[
