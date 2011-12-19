@@ -67,8 +67,11 @@ def print_messages(messages):
     for m in messages:
         str_type = str(type(m))
 
-        if IGNORE_UNUSED_IMPORT and 'UnusedImport' in str_type:
-            continue
+        if IGNORE_UNUSED_IMPORT:
+            if 'UnusedImport' in str_type:
+                continue
+            if 'RedefinedWhileUnused' in str_type:
+                continue
 
         lst = type_messages.setdefault(str_type, [])
         lst.append(m)

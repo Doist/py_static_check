@@ -4,7 +4,7 @@ from setuptools import setup
 setup(
     name="py_static_check",
     license="MIT",
-    version="1.1",
+    version="1.2",
     author="amix",
     author_email="amix@amix.dk",
     url="http://www.amix.dk/",
