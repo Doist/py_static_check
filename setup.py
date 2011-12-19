@@ -1,14 +1,15 @@
 #!/usr/bin/python
-from distutils.core import setup
+from setuptools import setup
 
 setup(
     name="py_static_check",
     license="MIT",
-    version="1.0",
+    version="1.1",
     author="amix",
     author_email="amix@amix.dk",
     url="http://www.amix.dk/",
     packages=["py_static_check", "py_static_check.pyflakes"],
+    install_requires = ['pyflakes>=0.5'],
     scripts=["bin/py_static_check"],
     classifiers=[
         "Development Status :: 6 - Mature",

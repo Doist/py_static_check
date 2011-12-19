@@ -5,7 +5,7 @@ import _ast
 import pyflakes
 import getopt
 
-from py_static_check.pyflakes import checker
+from modified_checker import Checker
 
 
 #--- Globals ----------------------------------------------
@@ -57,7 +57,7 @@ def check(codeString, filename):
         return []
     else:
         # Okay, it's syntactically valid. Now check it.
-        w = checker.Checker(tree, filename, STAR_IMPORTS)
+        w = Checker(tree, filename, STAR_IMPORTS)
         return w.messages
 
 
@@ -95,10 +95,11 @@ def check_path(filename):
 
 #--- Script processing ----------------------------------------------
 def usage():
-    print 'PyFlakes a Lint-like tool for Python. It is focused on identifying common errors quickly without executing Python code'
+    print 'py_static_check a Lint-like tool for Python. It is focused on identifying common errors quickly without executing Python code.'
+    print 'py_static_check is based on pyflakes and offers some additioanl features such as handling of star imports.'
     print ''
     print 'Usage:'
-    print '    pyflakes file.py directory/'
+    print '    py_static_check file.py directory/'
     print ''
     print 'Options:'
     print '    -h, --help: Displays this message'
